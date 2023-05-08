@@ -30,7 +30,14 @@ class Item {
         return newItem;
     }
 
-    
+    async update(data){
+        const updatedItem = db.query("UPDATE item SET (title, content)=($1, $2) WHERE item_id = $3) RETURNING *;", [title, this.content]);
+
+        if(response.rows.length != 1){
+            throw new Error("Not able to update the item")
+        }
+        return new Item(updatedItem);
+    }
 
     async destroy() {
         let response = await db.query("DELETE FROM itemn WHERE item_id = $1 RETURNING *;", [this.id]);

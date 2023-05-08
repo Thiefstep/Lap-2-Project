@@ -29,6 +29,10 @@ async function show (req, res) {
     }
 };
 
+async function update(req, res){
+    
+}
+
 async function destroy (req, res) {
     try {
         const id = parseInt(req.params.id);

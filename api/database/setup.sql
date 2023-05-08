@@ -16,3 +16,11 @@ CREATE TABLE token (
     PRIMARY KEY (token_id),
     FOREIGN KEY (user_id) REFERENCES user_account("user_id")
 );
+
+CREATE TABLE item (
+    item_id INT GENERATED ALWAYS AS IDENTITY,
+    title VARCHAR(50) NOT NULL,
+    content VARCHAR (200) NOT NULL,
+    PRIMARY KEY (item_id),
+    FOREIGN KEY (user_id) REFERENCES user_account("user_id") 
+)

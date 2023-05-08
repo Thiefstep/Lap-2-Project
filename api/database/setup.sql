@@ -19,6 +19,7 @@ CREATE TABLE token (
 
 CREATE TABLE item (
     item_id INT GENERATED ALWAYS AS IDENTITY,
+    user_id INT NOT NULL,
     title VARCHAR(50) NOT NULL,
     content VARCHAR (200) NOT NULL,
     PRIMARY KEY (item_id),

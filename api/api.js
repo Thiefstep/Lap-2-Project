@@ -11,12 +11,11 @@ api.use(express.json());
 api.use(logRoutes);
 
 api.get("/", (req, res) => {
-    res.json({
-        name: "Discretion",
-        description: "Send and receive private messages."
-    })
+    res.send("Welcome to our API!!")
 })
 
 api.use("/users", userRouter);
+
+module.exports = api;
 
 module.exports = api;

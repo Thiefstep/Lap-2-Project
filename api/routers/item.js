@@ -10,4 +10,4 @@ itemRouter.get("/:id", itemController.show);
 itemRouter.patch("/:id", itemController.update);
 itemRouter.delete("/:id", itemController.destroy);
 
-module.exports = postRouter;
+module.exports = itemRouter;

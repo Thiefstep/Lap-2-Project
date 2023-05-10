@@ -1,9 +1,5 @@
 /* Login Page & Register Page */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  #login-box, #register-box {
+#login-box, #register-box {
     width: 300px;
     margin: 100px auto;
     padding: 20px;
@@ -38,4 +34,44 @@ body {
   }
   input[type="submit"]:hover {
     background-color: #3e8e41;
+  }
+
+  /* Main Page */
+  .navbar {
+    background-color: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navbar img {
+    float: left;
+    height: 50px;
+    padding: 10px;
+  }
+ 
+  .navbar input[type=text] {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 16px;
+    background-color: #bbbbbb;
+  }
+
+  .user-icon {
+    float: right;
+    height: 50px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-icon img {
+    float: right;
   }

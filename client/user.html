@@ -25,9 +25,8 @@
                         </ul>
                 </ul>
                 <form class="d-flex">
-                    <button id="start_button" onclick="window.location.href='./user.html';">Begin</button>
-                    <button class="btn btn-outline-dark" onclick="window.location.href='./user.html';">User</button>
-                    <button class="btn btn-outline-dark" href="./user.html">Home</button>
+                    <button class="btn btn-outline-dark"><a href="./user.html">User</a></button>
+                    <button class="btn btn-outline-dark"><a href="./index.html">Home</a></button>
                 </form>
             </div>
         </div>
@@ -42,17 +41,34 @@
         </div>User
     </header>
     <!-- Section-->
-    <button class="btn btn-outline-dark" >Show All listings</button>
-    <button class="btn btn-outline-dark">Update Listing</button>
-    <button class="btn btn-outline-dark" >Add Listing</button>
-    <button class="btn btn-outline-dark" >Delete Listing</button>
+    <div class="container px-4 px-lg-5 my-5">
+        <section>
+            <button class="btn btn-outline-dark">Show All listings</button>
+            <button class="btn btn-outline-dark">Update Listing</button>
+            <button class="btn btn-outline-dark">Add Listing</button>
+            <button class="btn btn-outline-dark">Delete Listing</button>
+        </section>
+    </div>
+    <div>
+        <section>
+            <ul id="show_listing">
+                <li> Hello I'll show you all my listing</li>
+            </ul>
+            <ul id="update_listing">
+                <li> I'll update one specific listing</li>
+            </ul>
+            <ul id="add_listing">
+                <li> I'll add a new listing</li>
+            </ul>
+            <ul id="delete_listing">
+                <li> I'll delete one listing</li>
+            </ul>
+        </section>
+    </div>
     <!-- Footer-->
     <footer class="py-5 bg-dark">
         <div class="container"><p class="m-0 text-center text-white"> &copy; 2023 Community Share</p></div>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
+
 </body>
 </html>

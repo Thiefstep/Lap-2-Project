@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS token;
-DROP TABLE IF EXISTS user_account;
+DROP TABLE IF EXISTS token CASCADE ;
+DROP TABLE IF EXISTS user_account CASCADE;
+DROP TABLE IF EXISTS item CASCADE;
 
 
 CREATE TABLE user_account (
@@ -19,9 +20,16 @@ CREATE TABLE token (
 
 CREATE TABLE item (
     item_id INT GENERATED ALWAYS AS IDENTITY,
-    user_id INT NOT NULL,
     title VARCHAR(50) NOT NULL,
     content VARCHAR (200) NOT NULL,
-    PRIMARY KEY (item_id),
-    FOREIGN KEY (user_id) REFERENCES user_account("user_id") 
-)
+    price INT NOT NULL,
+    PRIMARY KEY (item_id)
+);
+
+INSERT INTO item (title, content, price)
+VALUES ('My First Item', 'This is the content of my first item', 10),
+ ('My second Item', 'This is the content of my second item', 40.5),
+ ('My third Item', 'This is the content of my third item', 54),
+ ('My fourth Item', 'This is the content of my first item', 85),
+ ('My Fifth Item', 'This is the content of my first item', 987)
+

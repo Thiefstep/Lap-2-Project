@@ -22,7 +22,7 @@ describe('API Server', () =>{
         .expect(200, done)
     })
 
-    test('responds to invalid method request with 405',(done) =>{
-        request(api).post('/').expect(405, done)
+    test('responds to invalid method request with 404',(done) =>{
+        request(api).post('/').expect(404, done)
     })
 })

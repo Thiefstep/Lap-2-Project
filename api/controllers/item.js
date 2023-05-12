@@ -1,5 +1,6 @@
 const Item = require('../models/item');
 
+
 async function index (req, res) {
     try {
         const items = await Item.getAll();
@@ -23,7 +24,7 @@ async function show (req, res) {
     try {
         const id = parseInt(req.params.id);
         const item = await Item.getOneById(id);
-        res.json(item);
+        res.status(200).json(item);
     } catch (err) {
         res.status(404).json({"error": err.message})
     }
@@ -31,7 +32,16 @@ async function show (req, res) {
 
 async function update(req, res){
     
-}
+    try {
+        const id = parseInt(req.params.id);
+        const data = req.body;
+        const item = await Item.getOneById(id);
+        const result = await item.updateItem(data);
+        res.status(200).json(result);
+    } catch (error) {
+        res.status(404).json({"error": error.message});
+    }
+};
 
 async function destroy (req, res) {
     try {
@@ -45,5 +55,5 @@ async function destroy (req, res) {
 };
 
 module.exports = {
-    index, create, show, destroy
+    index, create, show, destroy, update
 }

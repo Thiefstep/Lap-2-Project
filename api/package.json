@@ -1,18 +1,25 @@
 {
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "open-cli": "^7.2.0",
+    "supertest": "^6.3.3"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "morgan": "^1.10.0",
     "pg": "^8.8.0",
     "uuid": "^9.0.0"
   },
   "scripts": {
     "dev": "nodemon -L index.js",
     "start": "node index.js",
-    "setup-db": "node ./database/setup.js"
+    "setup-db": "node ./database/setup.js",
+    "openHTML": "open-cli ../client/index.html",
+    "test": "jest --watchAll",
+    "coverage": "jest --coverage"
   }
 }

@@ -3,7 +3,10 @@ const addItemForm = document.querySelector('.add-item-form');
 const titleValue = document.getElementById('title-value');
 const contentValue = document.getElementById('content-value');
 const priceValue = document.getElementById('price-value');
+const fileValue = document.getElementById('file-value');
 const bntSubmit = document.querySelector('.btn')
+
+
 let output = '';
 const date = new Date();
 let dateNow = date.toUTCString().slice(5,16);
@@ -13,12 +16,9 @@ const url = 'http://localhost:5000/item';
 const renderItems = (items) => {
     items.forEach(item => {
         output +=`
-        <div class="card mt-4 col-md-6 bg-ligt">
+        <div class="card mt-4 col-sm-3 bg-light">
             <div class="card-body" data-id=${item.id}>
                 <h5 class="card-title">${item.title}</h5>
-
-
-                
                 <h6 class="card-subtitle mb-2 text-muted">${dateNow}</h6>
                 <p class="card-content">${item.content}</p>
                 <p class="card-price">£${item.price}</p>                
@@ -29,6 +29,10 @@ const renderItems = (items) => {
     });
     itemList.innerHTML = output;
 }
+
+
+
+
 
 
 
@@ -71,11 +75,11 @@ itemList.addEventListener('click', (e) => {
     }
 
     //Update - update the existing item
-    //Method: PUT
+    //Method: PATCH
     bntSubmit.addEventListener('click', (e) => {
         e.preventDefault();
         fetch(`${url}/${id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: { 
                 'Content-Type': 'application/json' 
             },
@@ -125,15 +129,18 @@ addItemForm.addEventListener('submit', (e) => {
 
 
 
-window.addEventListener('load', function() {
-    document.querySelector('input[type="file"]').addEventListener('change', function() {
-        if (this.files && this.files[0]) {
-            var img = document.querySelector('img');
-            img.onload = () => {
-                URL.revokeObjectURL(img.src);  
-            }
+// window.addEventListener('load', function() {
+//     document.querySelector('input[type="file"]').addEventListener('change', function() {
+//         if (this.files && this.files[0]) {
+//             var img = document.querySelector('img');
+//             img.onload = () => {
+//                 URL.revokeObjectURL(img.src);  
+//             }
   
-            img.src = URL.createObjectURL(this.files[0]); 
-        }
-    });
-  });
+//             img.src = URL.createObjectURL(this.files[0]); 
+//         }
+//     });
+//   });
+
+
+

@@ -27,9 +27,11 @@ CREATE TABLE item (
 );
 
 INSERT INTO item (title, content, price)
-VALUES ('My First Item', 'This is the content of my first item', 10),
- ('My second Item', 'This is the content of my second item', 40.5),
- ('My third Item', 'This is the content of my third item', 54),
- ('My fourth Item', 'This is the content of my first item', 85),
- ('My Fifth Item', 'This is the content of my first item', 987)
+VALUES ('Playstation 5', 'The console is in a good condition, it does work without any issue', 400),
+ ('Kettle', 'I am still using it and works like new', 40.5),
+ ('Washing mashine', 'This machine is 3 years old and still washing', 54),
+ ('4 Wood Chair', 'All 4 have been used a few times', 85),
+ ('Table', 'Not using it anymore', 125)
+
+
 

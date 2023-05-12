@@ -1,5 +1,6 @@
 const Item = require('../models/item');
 
+
 async function index (req, res) {
     try {
         const items = await Item.getAll();

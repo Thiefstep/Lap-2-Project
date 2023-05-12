@@ -32,7 +32,7 @@ class Item {
     }
 
     async updateItem(data){
-        const {title, content, price} = data
+        const {title, content, price} = data;
         const response = await db.query("UPDATE item SET (title, content, price) = ($1, $2, $3) WHERE item_id = $4 RETURNING *;", [title, content, price, this.id]);
         if(response.rows.length != 1){
             throw new Error("Not able to update the item")

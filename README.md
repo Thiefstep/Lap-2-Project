@@ -8,9 +8,9 @@ Search and browse items by category or keyword
 Contact seller through phone, email or other preferred method
 No checkout payment options
 Admin panel to manage users, items, and categories
-Technologies
-The website is built using the following technologies:
 
+# Technologies
+The website is built using the following technologies:
 HTML, CSS, and JavaScript for the front-end
 Express and Node.js for the back-end
 PostgreSQL for the database
@@ -25,8 +25,7 @@ Copy code
 DB_URL=postgres://user:password@localhost:5432/recycling_website
 SESSION_SECRET=your_session_secret
 Replace user and password with your PostgreSQL credentials, and your_session_secret with a random string of characters to secure the session.
-4. Create the database tables: npm run db:create && npm run db:migrate
-
+Create the database tables: npm run db:create && npm run db:migrate
 Start the server: `npm start`
 Open your browser and go to http://localhost:3000
 Contributing
